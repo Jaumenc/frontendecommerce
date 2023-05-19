@@ -4,22 +4,24 @@ import { Link, useLocation } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { BsBag, BsEye } from "react-icons/bs";
+
 const ProductCard = (props) => {
   const { grid } = props;
+  console.log(grid);
   let location = useLocation();
 
   return (
     <>
       <div
         className={` ${
-          location.pathname === "/tienda" ? `gr-${grid}` : "col-3"
+          location.pathname === "/producto" ? `gr-${grid}` : "col-3"
         }`}
       >
         <Link
           to={`${
-            location.pathname == "/"
+            location.pathname === "/"
               ? "/producto/:id"
-              : location.pathname == "/producto/:id"
+              : location.pathname === "/producto/:id"
               ? "/producto/:id"
               : "/:id"
           }`}
@@ -77,14 +79,14 @@ const ProductCard = (props) => {
       </div>
       <div
         className={` ${
-          location.pathname === "/tienda" ? `gr-${grid}` : "col-3"
+          location.pathname === "/producto" ? `gr-${grid}` : "col-3"
         }`}
       >
         <Link
           to={`${
-            location.pathname == "/"
+            location.pathname === "/"
               ? "/producto/:id"
-              : location.pathname == "/producto/:id"
+              : location.pathname === "/producto/:id"
               ? "/producto/:id"
               : "/:id"
           }`}
